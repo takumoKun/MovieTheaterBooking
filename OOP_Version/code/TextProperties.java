@@ -1,3 +1,7 @@
+/*
+ * This interface contains the ANSI color codes for the text colors of the code
+ */
+
 package OOP_Version.code;
 
 public interface TextProperties{
