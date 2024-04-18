@@ -236,7 +236,10 @@ public class TheaterRunner implements TextProperties{
         try {
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor(); // Clear the console
         } catch (Exception e) {
-            System.out.println("Unable to clearConsole the screen.");
+            System.out.println("Unable to clearConsole the screen. Doing primitive way instead lol");
+            for (int i = 0; i < 50; i++) {
+                System.out.println();
+            }
         }
     }
 
