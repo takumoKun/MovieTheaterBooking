@@ -41,12 +41,12 @@ public class TheaterRunner implements TextProperties{
                     if(theater.bookSeat(seat) == Response.Success){
                         //if the seat is not yet booked, book the seat and display a success message using promptMaker method
                         promptMaker("Seat " + seat + " is Successfully booked!", false, GOOD);
-                        //display the updated seats using the displaySeats method
-                        displaySeats(theater);
                     } else {
                         //if the seat is already booked, display a warning message using promptMaker method
                         promptMaker("Seat " + seat + " is already booked!", false, WARN);
                     }
+                    //display the updated seats using the displaySeats method
+                    displaySeats(theater);
                     //call the pause method to pause the program until the user presses enter
                     pause();
                     break;
@@ -64,12 +64,12 @@ public class TheaterRunner implements TextProperties{
                     if(theater.unBookSeat(seat) == Response.Success){
                         //if the seat is already booked, unbook the seat and display a success message using promptMaker method
                         promptMaker("Seat " + seat + " was Successfuly Unbooked", false, GOOD);
-                        //display the updated seats using the displaySeats method
-                        displaySeats(theater);
                     } else {
                         //if the seat is already unbooked, display a warning message using promptMaker method
                         promptMaker("Seat " + seat + " is not yet Booked!", false, WARN);
                     }
+                    //display the updated seats using the displaySeats method
+                    displaySeats(theater);
                     //call the pause method to pause the program until the user presses enter
                     pause();
                     break;
