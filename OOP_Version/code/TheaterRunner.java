@@ -79,6 +79,8 @@ public class TheaterRunner implements TextProperties{
                     pause();
                     break;
                 case 3:
+                    //call clear console method
+                    clearConsole();
                     //display all the seats using the displaySeats method
                     displaySeats(theater);
                     //call the pause method to pause the program until the user presses enter
