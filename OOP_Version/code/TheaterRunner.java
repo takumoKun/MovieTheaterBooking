@@ -4,6 +4,7 @@
 
 package OOP_Version.code;
 
+import OOP_Version.code.*;
 import java.util.Scanner;
 
 public class TheaterRunner implements TextProperties{
@@ -21,7 +22,7 @@ public class TheaterRunner implements TextProperties{
             do{ 
                 //call the displayMenu() method to display the menu
                 displayMenu();
-                choice = getInput("Enter choice: ", 4);
+                choice = getInput("Enter choice: ", 5);
                 // check if the getInput method returns an invalid input and stay in the loop until a valid input is given
             } while(choice == -1);
 
@@ -36,7 +37,9 @@ public class TheaterRunner implements TextProperties{
                         seat = getInput("Enter seat number: ", seatNum);
                         //stay on the loop if getInput method returns an invalid response
                     } while(seat == -1);
-
+                    //call clearConsole method
+                    clearConsole();
+                    
                     //check if the desired seat is already booked or not by calling the bookSeat method from the theater object
                     if(theater.bookSeat(seat) == Response.Success){
                         //if the seat is not yet booked, book the seat and display a success message using promptMaker method
@@ -59,6 +62,8 @@ public class TheaterRunner implements TextProperties{
                         seat = getInput("Enter seat number: ", seatNum);
                         //stay on the loop if getInput method returns an invalid response
                     } while(seat == -1);
+                    // call clearConsole method
+                    clearConsole();
 
                     //check if the desired seat is already unbooked or not by calling the unBookSeat method from the theater object
                     if(theater.unBookSeat(seat) == Response.Success){
@@ -87,6 +92,10 @@ public class TheaterRunner implements TextProperties{
                         //ask the user for the number of seats they wish to change
                         seatNum = getInput("Enter the number of seats: ", 100);
                     } while(seatNum == -1);
+
+                    // call clearConsole method
+                    clearConsole();
+
                     //change the number of seats using the changeSeatNum method from the theater object
                     theater.changeSeatNum(seatNum);
                     //display a success message using promptMaker method
@@ -127,19 +136,19 @@ public class TheaterRunner implements TextProperties{
     //method for displaying the seats
     public static void displaySeats(Theater theater){
         //display the header for the seat number and status
-        System.out.println("\n╔═══════════════════════════╗");
-        System.out.println("║  Seat #           Status  ║");
-        System.out.println("╠═══════════════════════════╣");
+        System.out.println("\n      ╔═══════════════════════════╗");
+        System.out.println("      ║  Seat #           Status  ║");
+        System.out.println("      ╠═══════════════════════════╣");
 
         //use a loop to display the seat number and status of each seat with their borders and colors
         for (int seat = 0; seat < seatNum; seat++) {
             if(theater.checkStatus(seat) == SeatStatus.Booked)
-                System.out.printf("║ "+ GOOD +"%5d         %10s"+ NORMAL +"  ║\n", seat + 1, "Booked");
+                System.out.printf("      ║ "+ GOOD +"%5d         %10s"+ NORMAL +"  ║\n", seat + 1, "Booked");
             else
-                System.out.printf("║ " + WHITE + "%5d         %10s" + NORMAL + "  ║\n", seat + 1, "Unbooked");
+                System.out.printf("      ║ " + WHITE + "%5d         %10s" + NORMAL + "  ║\n", seat + 1, "Unbooked");
         }
         //display the footer for the seats
-        System.out.println("╚═══════════════════════════╝\n");
+        System.out.println("      ╚═══════════════════════════╝\n");
     }
 
     //method for creating a prompt
@@ -203,11 +212,11 @@ public class TheaterRunner implements TextProperties{
                 return input;
             } else {
                 //display an error message if the input is not within the limit
-                System.out.println("Invalid input. Please enter a number between 1 and " + limit);
+                System.out.println(WARN + "Invalid input. Please enter a number between 1 and " + limit + "!" + NORMAL);
             }
         } catch (Exception e){
             //display an error message if the input is not a number
-            System.out.println("Invalid input. Please enter a number!");
+            System.out.println(WARN + "Invalid input. Please enter a number!" + NORMAL);
         }
         //call the pause method to pause the program until the user presses enter
         pause();
