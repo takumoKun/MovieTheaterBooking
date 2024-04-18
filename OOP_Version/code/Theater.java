@@ -4,23 +4,23 @@
 
 package OOP_Version.code;
 
-class Theater extends Seats{
+class Theater extends Seat{
     // Number of seats in the theater
     protected int seatNum;
     // Array of seats in the theater
-    protected Seats[] seats;
+    protected Seat[] seats;
 
     // Constructor to initialize the theater
     public Theater(int seatNum){
         this.seatNum = seatNum;
 
         // Initialize the array of seats
-        seats = new Seats[seatNum];
+        seats = new Seat[seatNum];
 
         // Initialize each seat in the array
         for(int index = 0; index < seatNum; index++){
             //set each object in the array to a new seat
-            seats[index] = new Seats();
+            seats[index] = new Seat();
             //set each seat to unbooked
             seats[index].setUnbooked();
         }
@@ -30,10 +30,10 @@ class Theater extends Seats{
     public void changeSeatNum(int seatNum){
         this.seatNum = seatNum;
 
-        seats = new Seats[seatNum];
+        seats = new Seat[seatNum];
 
         for(int index = 0; index < seatNum; index++){
-            seats[index] = new Seats();
+            seats[index] = new Seat();
             seats[index].setUnbooked();
         }
     }

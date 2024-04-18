@@ -4,7 +4,6 @@
 
 package OOP_Version.code;
 
-import OOP_Version.code.*;
 import java.util.Scanner;
 
 public class TheaterRunner implements TextProperties{

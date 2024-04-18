@@ -4,7 +4,7 @@
 
 package OOP_Version.code;
 
-class Seats {
+class Seat {
     // Status of the seat
     protected SeatStatus seatStatus;
 
