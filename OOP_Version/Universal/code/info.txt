@@ -1,1 +1,0 @@
-universal version can run to almost all encoding by using basic ACII characters
